@@ -52,8 +52,6 @@ cd betalent_employees_app
 flutter pub get
 ```
 
-// ... existing code ...
-
 3. **Run the Application**
 
 Before running the application, you need to configure the API URL in `lib/data/repositories/employee_repository_impl.dart`:
