@@ -43,7 +43,7 @@ intl: ^0.20.2 # For internationalization and formatting
 
 1. **Clone the Repository**
 ```bash
-git clone [https://github.com/PedroHMacedo/betalent_employees_app.git]
+git clone https://github.com/PedroHMacedo/betalent_employees_app.git
 cd betalent_employees_app
 ```
 
