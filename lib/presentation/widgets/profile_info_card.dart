@@ -1,3 +1,4 @@
+import 'package:betalent_employees_app/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ProfileInfoCard extends StatelessWidget {
@@ -16,20 +17,28 @@ class ProfileInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Info items
-            _buildInfoItem(context, 'Cargo', role),
-            const SizedBox(height: 8),
-            _buildInfoItem(context, 'Data de admissão', admissionDate),
-            const SizedBox(height: 8),
-            _buildInfoItem(context, 'Telefone', phone),
-          ],
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          left: BorderSide(color: Theme.of(context).colorScheme.outline),
+          right: BorderSide(color: Theme.of(context).colorScheme.outline),
+          bottom: BorderSide(color: Theme.of(context).colorScheme.outline),
+        ),
+      ),
+      child: Card(
+        elevation: 0,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildInfoItem(context, 'Cargo', role),
+              const SizedBox(height: 8),
+              _buildInfoItem(context, 'Data de admissão', admissionDate),
+              const SizedBox(height: 8),
+              _buildInfoItem(context, 'Telefone', phone),
+            ],
+          ),
         ),
       ),
     );
@@ -39,20 +48,8 @@ class ProfileInfoCard extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 14,
-            color: Theme.of(context).colorScheme.onSurface,
-          ),
-        ),
-        Text(
-          value,
-          style: TextStyle(
-            fontSize: 14,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-        ),
+        Text(label, style: AppTextStyles.h2),
+        Text(value, style: AppTextStyles.h3),
       ],
     );
   }

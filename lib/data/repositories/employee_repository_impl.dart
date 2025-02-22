@@ -13,12 +13,11 @@ class EmployeeRepositoryImpl implements EmployeeRepository {
   @override
   Future<Either<Failure, List<EmployeeEntity>>> getEmployees() async {
     try {
-      final response = await client.get('http://192.168.68.111:3000/employees');
+      final response = await client.get('http://192.168.68.101:3000/employees');
       final List<EmployeeModel> employees =
           (response).map((json) => EmployeeModel.fromJson(json)).toList();
       return Right(employees);
     } on ServerFailure catch (e) {
-      print(e);
       return Left(ServerFailure(e.message));
     }
   }

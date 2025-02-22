@@ -9,6 +9,10 @@ class GetEmployees {
   GetEmployees(this.repository);
 
   Future<Either<Failure, List<EmployeeEntity>>> call() async {
-    return await repository.getEmployees();
+    try {
+      return await repository.getEmployees();
+    } catch (e) {
+      return Left(ServerFailure('Erro ao buscar funcionários: $e'));
+    }
   }
 }
